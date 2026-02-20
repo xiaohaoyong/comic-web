@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /user/
+Disallow: /login
+Disallow: /register
+
+Sitemap: https://comic.example.com/sitemap.xml
