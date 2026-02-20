@@ -4,7 +4,9 @@ export const useApi = () => {
   const config = useRuntimeConfig()
   const userStore = useUserStore()
   
-  const baseURL = config.public.apiBase
+  const baseURL = import.meta.server 
+    ? config.apiBase 
+    : config.public.apiBase
 
   const fetch = $fetch.create({
     baseURL,
