@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   ssr: true,
   
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   
   modules: [
     '@pinia/nuxt',
@@ -49,13 +49,13 @@ export default defineNuxtConfig({
   
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes: ['/', '/comics', '/categories']
+      crawlLinks: false,
+      routes: []
     }
   },
   
   routeRules: {
-    '/': { prerender: true },
+    '/': { swr: 3600 },
     '/comics': { swr: 3600 },
     '/comics/**': { swr: 7200 },
     '/chapters/**': { swr: 86400 }
